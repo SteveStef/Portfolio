@@ -4,6 +4,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image";
+import sponsorlab from "../SponsorLab.png";
+import mainlinerealty from "../mainlinerealty.png";
+import mainlinecleaner from "../mainlinecleaners.png";
 import {
   Github,
   Linkedin,
@@ -19,6 +23,9 @@ import {
   Cloud,
   Box,
   GitBranch,
+  Users,
+  Target,
+  Globe,
   Repeat,
   User,
   Briefcase,
@@ -222,7 +229,7 @@ export default function Home() {
                       <div className="flex items-start gap-3">
                         <Cloud className="h-5 w-5 text-primary mt-0.5" />
                         <div>
-                          <h4 className="font-medium">Upcomming</h4>
+                          <h4 className="font-medium">Upcoming</h4>
                           <p className="text-muted-foreground">SDE Intern at AWS</p>
                         </div>
                       </div>
@@ -231,7 +238,7 @@ export default function Home() {
                         <Clock className="h-5 w-5 text-primary mt-0.5" />
                         <div>
                           <h4 className="font-medium">Experience</h4>
-                          <p className="text-muted-foreground">4+ years in software development</p>
+                          <p className="text-muted-foreground">2+ years in software development</p>
                         </div>
                       </div>
                     </div>
@@ -284,7 +291,7 @@ export default function Home() {
 
                 <AnimatedStats
                   stats={[
-                    { value: 4, label: "Years of Experience", suffix: "+" },
+                    { value: 2, label: "Years of Experience", suffix: "+" },
                     { value: 15, label: "Projects Completed", suffix: "+" },
                     { value: 10, label: "Technologies", suffix: "+" },
                     { value: 3.7, label: "GPA", suffix: "" },
@@ -520,47 +527,73 @@ export default function Home() {
       </section>
 
       {/* Projects Section - Redesigned */}
-      <section className="py-20 bg-background" id="projects">
-        <div className="container px-4 md:px-6">
-          <SectionHeading badge="Projects" title="Featured Work" />
+    <section className="py-20 bg-background" id="projects">
+      <div className="container px-4 md:px-6">
+        <SectionHeading badge="Projects" title="Featured Work" />
 
-          <div className="max-w-6xl mx-auto">
-            <div className="grid gap-12">
-              {/* Project 1 - SponsorLab */}
-              <AnimateOnScroll animation="opacity-100 scale-100" className="scale-95">
-                <div className="group relative">
-                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
-                    <div className="bg-card rounded-xl overflow-hidden">
-                      <div className="grid md:grid-cols-12 gap-0">
-                        {/* Project Image/Preview */}
-                        <div className="md:col-span-5 relative overflow-hidden h-64 md:h-auto">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                            <div className="text-5xl font-bold text-primary/30 transform transition-transform duration-700 group-hover:scale-110">
-                              SponsorLab
-                            </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid gap-12">
+            {/* Project 1 - SponsorLab */}
+            <AnimateOnScroll animation="opacity-100 scale-100" className="scale-95">
+              <div className="group relative">
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
+                  <div className="bg-card rounded-xl overflow-hidden">
+                    <div className="flex flex-col">
+                      {/* Project Image/Preview - Full width at top */}
+                      <div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5">
+                          <Image
+                            src={sponsorlab}
+                            alt="SponsorLab - Marketplace connecting content creators with brands"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            width={800}
+                            height={450}
+                            priority
+                          />
+                        </div>
+                        <div className="absolute top-4 right-4 z-10">
+                          <Badge className="bg-primary/80 hover:bg-primary text-white">Featured</Badge>
+                        </div>
+                      </div>
+
+                      {/* Project Content - Below image */}
+                      <div className="p-6 md:p-8">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">SponsorLab</h3>
+                          <Badge variant="outline" className="text-primary border-primary">
+                            Startup
+                          </Badge>
+                        </div>
+
+                        {/* Project metadata */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1.5">
+                            <Calendar className="h-4 w-4 text-primary" />
+                            <span>2024 - Present</span>
                           </div>
-                          <div className="absolute bottom-0 right-0 m-4 z-10">
-                            <Badge className="bg-primary/80 hover:bg-primary text-white">Featured</Badge>
+                          <div className="flex items-center gap-1.5">
+                            <Users className="h-4 w-4 text-primary" />
+                            <span>Team of 4</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Target className="h-4 w-4 text-primary" />
+                            <span>In Beta</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Globe className="h-4 w-4 text-primary" />
+                            <span>Based in PA</span>
                           </div>
                         </div>
 
-                        {/* Project Content */}
-                        <div className="md:col-span-7 p-6 md:p-8">
-                          <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
-                              SponsorLab
-                            </h3>
-                            <Badge variant="outline" className="text-primary border-primary">
-                              Startup
-                            </Badge>
-                          </div>
+                        <p className="text-muted-foreground mb-4">
+                          A comprehensive marketplace platform connecting content creators with brands for sponsorship
+                          opportunities, featuring secure payments and analytics integration.
+                        </p>
 
-                          <p className="text-muted-foreground mb-6">
-                            A comprehensive marketplace platform connecting content creators with brands for sponsorship
-                            opportunities, featuring secure payments and analytics integration.
-                          </p>
-
-                          <div className="space-y-4">
+                        <div className="grid md:grid-cols-2 gap-6 mb-6">
+                          {/* Key achievements */}
+                          <div className="space-y-3">
+                            <h4 className="font-medium text-sm">Key Features</h4>
                             <div className="flex items-start gap-2">
                               <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                               <p>
@@ -581,60 +614,115 @@ export default function Home() {
                             </div>
                           </div>
 
-                          <div className="mt-8 flex flex-wrap gap-2">
+                          {/* Technical highlights */}
+                          <div className="bg-muted/50 rounded-lg p-3">
+                            <h4 className="font-medium text-sm flex items-center gap-1.5 mb-2">
+                              <Layers className="h-4 w-4 text-primary" />
+                              Technical Highlights
+                            </h4>
+                            <ul className="text-sm space-y-1 text-muted-foreground">
+                              <li>• Integrated Stripe connected accounts</li>
+                              <li>• Real-time messaging system using WebSockets</li>
+                              <li>• Advanced analytics dashboard with data visualization</li>
+                              <li>• Multi-factor authentication and role-based access control</li>
+                            </ul>
+                            <br></br>
+                            <div className="flex flex-wrap gap-2 mb-4">
                             <Badge className="bg-[#68a063]/10 text-[#68a063] hover:bg-[#68a063]/20">Node.js</Badge>
                             <Badge className="bg-[#61dafb]/10 text-[#61dafb] hover:bg-[#61dafb]/20">React</Badge>
                             <Badge className="bg-[#336791]/10 text-[#336791] hover:bg-[#336791]/20">PostgreSQL</Badge>
                             <Badge className="bg-[#6772e5]/10 text-[#6772e5] hover:bg-[#6772e5]/20">Stripe API</Badge>
                             <Badge className="bg-[#ff0000]/10 text-[#ff0000] hover:bg-[#ff0000]/20">YouTube API</Badge>
-                          </div>
+                            </div>
+                            </div>
+                        </div>
 
-                          <div className="mt-6 flex gap-4">
 
+                        <div className="flex gap-4">
                           <Link href="https://sponsorlab.co" target="_blank" rel="noopener noreferrer">
                             <Button variant="outline" size="sm" className="gap-2 rounded-full">
                               <ExternalLink className="h-4 w-4" />
-                              <span >Visit Project</span>
+                              <span>Visit Project</span>
                             </Button>
-                            </Link>
+                          </Link>
 
-                          <Link href="https://github.com/SteveStef/SponsorLab-Frontend" target="_blank" rel="noopener noreferrer">
+                          <Link
+                            href="https://github.com/SteveStef/SponsorLab-Frontend"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <Button variant="outline" size="sm" className="gap-2 rounded-full">
                               <Github className="h-4 w-4" />
                               <span>View Code</span>
                             </Button>
-                            </Link>
-                          </div>
+                          </Link>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </AnimateOnScroll>
+              </div>
+            </AnimateOnScroll>
 
-              {/* Project 2 - Main Line Realty */}
-              <AnimateOnScroll animation="opacity-100 scale-100" className="scale-95" delay={200}>
-                <div className="group relative">
-                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
-                    <div className="bg-card rounded-xl overflow-hidden">
-                      <div className="grid md:grid-cols-12 gap-0">
-                        {/* Project Content */}
-                        <div className="md:col-span-7 p-6 md:p-8 order-2 md:order-1">
-                          <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
-                              Main Line Realty
-                            </h3>
-                            <Badge variant="outline" className="text-primary border-primary">
-                              Freelance Project
-                            </Badge>
+            {/* Project 2 - Main Line Realty */}
+            <AnimateOnScroll animation="opacity-100 scale-100" className="scale-95" delay={200}>
+              <div className="group relative">
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
+                  <div className="bg-card rounded-xl overflow-hidden">
+                    <div className="flex flex-col">
+                      {/* Project Image/Preview - Full width at top */}
+                      <div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5">
+                          <Image
+                            src={mainlinerealty}
+                            alt="Main Line Realty - Real estate website with advanced search capabilities"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            width={800}
+                            height={450}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Project Content - Below image */}
+                      <div className="p-6 md:p-8">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
+                            Main Line Realty
+                          </h3>
+                          <Badge variant="outline" className="text-primary border-primary">
+                            Freelance
+                          </Badge>
+                        </div>
+
+                        {/* Project metadata */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1.5">
+                            <Calendar className="h-4 w-4 text-primary" />
+                            <span>Jan 2025 - Feb 2025</span>
                           </div>
+                          <div className="flex items-center gap-1.5">
+                            <Users className="h-4 w-4 text-primary" />
+                            <span>Solo Project</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Target className="h-4 w-4 text-primary" />
+                            <span>Sold to Compass Agent</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Globe className="h-4 w-4 text-primary" />
+                            <span>Philadelphia Area</span>
+                          </div>
+                        </div>
 
-                          <p className="text-muted-foreground mb-6">
-                            A custom real estate website with advanced search capabilities, AI-powered assistance, and
-                            comprehensive property data integration.
-                          </p>
+                        <p className="text-muted-foreground mb-4">
+                          A real estate website with advanced search capabilities, AI-powered assistance, and
+                          property data integration.
+                        </p>
 
-                          <div className="space-y-4">
+                        <div className="grid md:grid-cols-2 gap-6 mb-6">
+                          {/* Key achievements */}
+                          <div className="space-y-3">
+                            <h4 className="font-medium text-sm">Key Features</h4>
                             <div className="flex items-start gap-2">
                               <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                               <p>
@@ -652,77 +740,112 @@ export default function Home() {
                             </div>
                           </div>
 
-                          <div className="mt-8 flex flex-wrap gap-2">
-                            <Badge className="bg-[#0ea5e9]/10 text-[#0ea5e9] hover:bg-[#0ea5e9]/20">AI</Badge>
-                            <Badge className="bg-[#1a73e8]/10 text-[#1a73e8] hover:bg-[#1a73e8]/20">Google Maps</Badge>
-                            <Badge className="bg-[#006aff]/10 text-[#006aff] hover:bg-[#006aff]/20">Zillow API</Badge>
-                            <Badge className="bg-[#61dafb]/10 text-[#61dafb] hover:bg-[#61dafb]/20">React</Badge>
+                          {/* Client testimonial */}
+                          <div className="bg-muted/50 rounded-lg p-3">
+                            <h4 className="font-medium text-sm mb-2 italic">Client Testimonial</h4>
+                            <p className="text-sm text-muted-foreground italic">
+                              "The custom real estate platform developed for our agency has significantly improved our
+                              online presence and lead generation. The AI-powered search features have been particularly
+                              valuable for our clients."
+                            </p>
+                            <p className="text-sm font-medium mt-2">— Compass agent</p>
+                          <br></br>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <Badge className="bg-[#0ea5e9]/10 text-[#0ea5e9] hover:bg-[#0ea5e9]/20">AI</Badge>
+                          <Badge className="bg-[#1a73e8]/10 text-[#1a73e8] hover:bg-[#1a73e8]/20">Google Maps</Badge>
+                          <Badge className="bg-[#006aff]/10 text-[#006aff] hover:bg-[#006aff]/20">Zillow API</Badge>
+                          <Badge className="bg-[#61dafb]/10 text-[#61dafb] hover:bg-[#61dafb]/20">React</Badge>
+                        </div>
                           </div>
 
-                          <div className="mt-6 flex gap-4">
+                        </div>
 
+
+                        <div className="flex gap-4">
                           <Link href="https://mainlinerealty.co" target="_blank" rel="noopener noreferrer">
                             <Button variant="outline" size="sm" className="gap-2 rounded-full">
                               <ExternalLink className="h-4 w-4" />
                               <span>Visit Project</span>
                             </Button>
-                            </Link>
+                          </Link>
 
-                          <Link href="https://github.com/SteveStef/MainLine-RealEstate" target="_blank" rel="noopener noreferrer">
+                          <Link
+                            href="https://github.com/SteveStef/MainLine-RealEstate"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <Button variant="outline" size="sm" className="gap-2 rounded-full">
                               <Github className="h-4 w-4" />
                               <span>View Code</span>
                             </Button>
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Project Image/Preview */}
-                        <div className="md:col-span-5 relative overflow-hidden h-64 md:h-auto order-1 md:order-2">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                            <div className="text-5xl font-bold text-primary/30 transform transition-transform duration-700 group-hover:scale-110">
-                              Main Line Realty
-                            </div>
-                          </div>
+                          </Link>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </AnimateOnScroll>
+              </div>
+            </AnimateOnScroll>
 
-              {/* Project 3 - Cleaning Solutions */}
-              <AnimateOnScroll animation="opacity-100 scale-100" className="scale-95" delay={400}>
-                <div className="group relative">
-                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
-                    <div className="bg-card rounded-xl overflow-hidden">
-                      <div className="grid md:grid-cols-12 gap-0">
-                        {/* Project Image/Preview */}
-                        <div className="md:col-span-5 relative overflow-hidden h-64 md:h-auto">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                            <div className="text-5xl font-bold text-primary/30 transform transition-transform duration-700 group-hover:scale-110">
-                              Main Line Cleaning
-                            </div>
+            {/* Project 3 - Cleaning Solutions */}
+            <AnimateOnScroll animation="opacity-100 scale-100" className="scale-95" delay={400}>
+              <div className="group relative">
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-1 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden">
+                  <div className="bg-card rounded-xl overflow-hidden">
+                    <div className="flex flex-col">
+                      {/* Project Image/Preview - Full width at top */}
+                      <div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5">
+                          <Image
+                            src={mainlinecleaner}
+                            alt="MainLine Cleaning - Booking platform for cleaning services"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            width={800}
+                            height={450}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Project Content - Below image */}
+                      <div className="p-6 md:p-8">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
+                            Main Line House Cleaning
+                          </h3>
+                          <Badge variant="outline" className="text-primary border-primary">
+                            Freelance
+                          </Badge>
+                        </div>
+
+                        {/* Project metadata */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1.5">
+                            <Calendar className="h-4 w-4 text-primary" />
+                            <span>Feb 2025 - March 2025</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Users className="h-4 w-4 text-primary" />
+                            <span>Solo Project</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Target className="h-4 w-4 text-primary" />
+                            <span>In progress</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Globe className="h-4 w-4 text-primary" />
+                            <span>Local Business</span>
                           </div>
                         </div>
 
-                        {/* Project Content */}
-                        <div className="md:col-span-7 p-6 md:p-8">
-                          <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
-                              Main Line House Cleaning
-                            </h3>
-                            <Badge variant="outline" className="text-primary border-primary">
-                              Freelance Project
-                            </Badge>
-                          </div>
+                        <p className="text-muted-foreground mb-4">
+                          A comprehensive booking platform for cleaning services with user-friendly interfaces, feedback
+                          systems, and secure deployment.
+                        </p>
 
-                          <p className="text-muted-foreground mb-6">
-                            A comprehensive booking platform for cleaning services with user-friendly interfaces,
-                            feedback systems, and secure deployment.
-                          </p>
-
-                          <div className="space-y-4">
+                        <div className="grid md:grid-cols-2 gap-6 mb-6">
+                          {/* Key achievements */}
+                          <div className="space-y-3">
+                            <h4 className="font-medium text-sm">Key Features</h4>
                             <div className="flex items-start gap-2">
                               <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                               <p>
@@ -742,46 +865,64 @@ export default function Home() {
                             </div>
                           </div>
 
-                          <div className="mt-8 flex flex-wrap gap-2">
-                            <Badge className="bg-[#000000]/10 text-[#000000] dark:text-[#ffffff] hover:bg-[#000000]/20 dark:hover:bg-[#ffffff]/20">
-                              Next.js
-                            </Badge>
-                            <Badge className="bg-[#6db33f]/10 text-[#6db33f] hover:bg-[#6db33f]/20">Spring Boot</Badge>
-                            <Badge className="bg-[#4479a1]/10 text-[#4479a1] hover:bg-[#4479a1]/20">MySQL</Badge>
-                            <Badge className="bg-[#0080ff]/10 text-[#0080ff] hover:bg-[#0080ff]/20">DigitalOcean</Badge>
-                            <Badge className="bg-[#009639]/10 text-[#009639] hover:bg-[#009639]/20">NGINX</Badge>
+                          {/* Business impact */}
+                          <div className="bg-muted/50 rounded-lg p-3">
+                            <h4 className="font-medium text-sm flex items-center gap-1.5 mb-2">
+                              <Layers className="h-4 w-4 text-primary" />
+                              Technology Used
+                            </h4>
+                            <ul className="text-sm space-y-1 text-muted-foreground">
+                              <li>• Utilizing MySQL database</li>
+                              <li>• Backend built in Springboot with Maven</li>
+                              <li>• Domains run through cloudflare for DDOS protection & SSL</li>
+                            </ul>
+                        <br></br>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <Badge className="bg-[#000000]/10 text-[#000000] dark:text-[#ffffff] hover:bg-[#000000]/20 dark:hover:bg-[#ffffff]/20">
+                            Next.js
+                          </Badge>
+                          <Badge className="bg-[#6db33f]/10 text-[#6db33f] hover:bg-[#6db33f]/20">Spring Boot</Badge>
+                          <Badge className="bg-[#4479a1]/10 text-[#4479a1] hover:bg-[#4479a1]/20">MySQL</Badge>
+                          <Badge className="bg-[#0080ff]/10 text-[#0080ff] hover:bg-[#0080ff]/20">DigitalOcean</Badge>
+                          <Badge className="bg-[#009639]/10 text-[#009639] hover:bg-[#009639]/20">NGINX</Badge>
+                        </div>
                           </div>
 
-                          <div className="mt-6 flex gap-4">
+                        </div>
 
-                          <Link href="https://github.com/SteveStef/MainLineCleaner" target="_blank" rel="noopener noreferrer">
+
+                        <div className="flex gap-4">
+                          <Link
+                            href="https://github.com/SteveStef/MainLineCleaner"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <Button variant="outline" size="sm" className="gap-2 rounded-full">
                               <Github className="h-4 w-4" />
                               <span>View Code</span>
                             </Button>
-                            </Link>
-                          </div>
+                          </Link>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </AnimateOnScroll>
-            </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
 
-            {/* More Projects Button */}
-            <div className="flex justify-center mt-12">
-
-              <Link href="https://github.com/SteveStef" target="_blank" rel="noopener noreferrer">
+          {/* More Projects Button */}
+          <div className="flex justify-center mt-12">
+            <Link href="https://github.com/SteveStef" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="gap-2 rounded-full group">
                 <span>View More Projects</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Skills Section - Redesigned */}
       <section className="py-20 bg-gradient-to-b from-background to-primary/5" id="skills">
