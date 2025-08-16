@@ -84,7 +84,7 @@ export default function Home() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
                   Stephen Stefanatos
                 </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground">Software Engineer & CTO</p>
+                <p className="text-xl md:text-2xl text-muted-foreground">Software Engineer at AWS & CTO of SponsorLab</p>
               </div>
               <p className="text-lg text-muted-foreground max-w-[600px]">
                 I enjoy building fullstack applications in both startup and enterprise environments.
@@ -222,15 +222,7 @@ export default function Home() {
                         <Briefcase className="h-5 w-5 text-primary mt-0.5" />
                         <div>
                           <h4 className="font-medium">Current Role</h4>
-                          <p className="text-muted-foreground">Co-founder & CTO at SponsorLab</p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Cloud className="h-5 w-5 text-primary mt-0.5" />
-                        <div>
-                          <h4 className="font-medium">Upcoming</h4>
-                          <p className="text-muted-foreground">SDE Intern at AWS</p>
+                          <p className="text-muted-foreground">Software Development Engineer at AWS</p>
                         </div>
                       </div>
 
@@ -238,7 +230,7 @@ export default function Home() {
                         <Clock className="h-5 w-5 text-primary mt-0.5" />
                         <div>
                           <h4 className="font-medium">Experience</h4>
-                          <p className="text-muted-foreground">2+ years in software development</p>
+                          <p className="text-muted-foreground">3+ years in software development</p>
                         </div>
                       </div>
                     </div>
@@ -291,7 +283,7 @@ export default function Home() {
 
                 <AnimatedStats
                   stats={[
-                    { value: 2, label: "Years of Experience", suffix: "+" },
+                    { value: 3, label: "Years of Experience", suffix: "+" },
                     { value: 15, label: "Projects Completed", suffix: "+" },
                     { value: 10, label: "Technologies", suffix: "+" },
                     { value: 3.7, label: "GPA", suffix: "" },
@@ -485,8 +477,12 @@ export default function Home() {
                 company="Amazon (AWS)"
                 location="Arlington, VA"
                 period="May 2025 - Aug 2025"
-                description={["Upcoming internship for Summer 2025"]}
-                badge="Upcoming"
+                description={[
+                  "Contributed to the ML/AI team focused on improving AWS documentation quality and accuracy.",
+"Designed and implemented an MCP (Model Context Protocol) server leveraging the LLM as a Judge framework to automate and standardize prompt evaluation processes using AWS Bedrock.", "Developed a comprehensive full-stack internal platform for AI agent management, utilizing React for the frontend and AWS services including API Gateway, Lambda, DynamoDB, S3, and AWS Glue."
+
+                ]}
+                badge="Recent"
                 onInView={() => setActiveExperience("amazon")}
               />
 
@@ -892,6 +888,13 @@ export default function Home() {
 
 
                         <div className="flex gap-4">
+
+                          <Link href="https://chicascleaning.com" target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline" size="sm" className="gap-2 rounded-full">
+                              <ExternalLink className="h-4 w-4" />
+                              <span>Visit Project</span>
+                            </Button>
+                          </Link>
                           <Link
                             href="https://github.com/SteveStef/MainLineCleaner"
                             target="_blank"
